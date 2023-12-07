@@ -1,0 +1,118 @@
+﻿@model List<OfferRideModel>
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title> Available Page Title</title>
+    <style>
+
+       
+        /* Define your internal CSS styles here */
+        .card {
+            /*Related to border*/
+            border: 2px dotted #ccc;
+            border-radius: 10px;
+            padding: 15px;
+        }
+
+        .card {
+            background-image: url('https://img.freepik.com/free-vector/taxi-app-interface-concept_23-2148494543.jpg?size=626&ext=jpg&uid=R112230945&ga=GA1.2.1878736734.1694682702&semt=sph');
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        .card {
+            background-color: rgba(0, 0, 0, 0.3);
+            align-items: center;
+            border: 3px dotted #ccc; /* Adjust border width and color as needed */
+            border-radius: 10px; /* Rounded corners for the card */
+            padding: 7px;
+        }
+
+            .card:hover {
+                background: #FFC311;
+                color: #fff;
+            }
+
+            .card-body .h2 {
+                text-align: center;
+            
+            }
+            .copyright-area {
+            background: #ffc312;
+            padding: 15px 0;
+            }
+
+        .footer-section {
+            background-color:#ffc312;
+            position: relative;
+        }
+
+        .copyright-text p {
+            margin: 0;
+            font-size: 16px;
+            color: black
+        } 
+
+        .green-button {
+            background-color: #28a745; /* Use the specific color code for green */
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            text-align: center;
+            text-decoration: none;
+        }
+
+            .green-button:hover {
+                background-color: #218838; /* Change the hover color if desired */
+            }
+
+
+
+        /* Additional styles can be defined here */
+    </style>
+</head>
+<body>
+<div class="container mt-3">
+    <div class="row">
+        @foreach(var value in Model)
+        {
+            <div class="col-md-3 mb-3">
+                 <div class="card">
+                    <div class="card-body">
+                        <h2>Available</h2>
+                        <p class="card-text"><strong>Rider Name:</strong> @value.Name</p>
+                        <p class="card-text"><strong>Source:</strong> @value.Source</p>
+                        <p class="card-text"><strong>Destination:</strong> @value.Destination</p>
+                        <p class="card-text"><strong>Car Name:</strong> @value.Car_Name</p>
+                        <p class="card-text"><strong>Seat Available:</strong> @value.Seat_Available</p>
+                        <p class="card-text"><strong>Phone No:</strong> @value.Phone_no</p>
+                        <p class="card-text"><strong>Departure Time:</strong> @value.DepartureTime</p>
+
+                        <a href="https://localhost:7046/Book/BookRide" class="btn btn-primary">Book Now</a>
+
+                     </div> 
+                </div>
+            </div>
+        }
+    </div>
+</div>
+
+    <footer class="footer section">
+        <div class="copyright-area">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xl-6 col-lg-6 text-center text-lg-left">
+                        <div class="copyright-text">
+                            <p>Copyright &copy; 2023, All Right Reserved</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>
